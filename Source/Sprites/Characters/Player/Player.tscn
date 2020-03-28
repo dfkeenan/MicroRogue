@@ -3,9 +3,8 @@
 [ext_resource path="res://Sprites/Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Player/Player.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 2.9084
-height = 3.81681
+[sub_resource type="CircleShape2D" id=32]
+radius = 3.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "IdleDown"
@@ -213,23 +212,30 @@ start_node = "Idle"
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=[
+"limit_camera",
+]]
 current = true
 zoom = Vector2( 0.25, 0.25 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -3 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 12
+frame = 2
 region_rect = Rect2( 32, 0, 8, 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 1 )
+shape = SubResource( 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/IdleDown = SubResource( 2 )
