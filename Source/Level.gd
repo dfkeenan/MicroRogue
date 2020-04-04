@@ -8,6 +8,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	load_ui()
+	set_camera_limits()
+	
+func load_ui() -> void:
+	$UI/Hud.visible = true
+	
+	
+func set_camera_limits() -> void:
 	var rect : Rect2 = $TileMap.get_used_rect()
 	var cell_size : Vector2 = $TileMap.cell_size
 	var start : Vector2 = rect.position * cell_size

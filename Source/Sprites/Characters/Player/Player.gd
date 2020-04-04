@@ -45,7 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	velocity = move_and_slide(direction.normalized() * 24)
+	velocity = move_and_slide(direction.normalized() * 32)
 	pass
 	
 func set_facing(value:Vector2) -> void:

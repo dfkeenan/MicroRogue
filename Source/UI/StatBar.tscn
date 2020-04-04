@@ -7,6 +7,9 @@
 margin_right = 32.0
 margin_bottom = 32.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 blocks = 3
 
 [node name="Icon" type="CenterContainer" parent="."]
