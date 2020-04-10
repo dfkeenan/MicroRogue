@@ -10,6 +10,6 @@ func _ready() -> void:
 	pass
 
 func _on_Item_body_entered(_body: Node) -> void:
-	var item =  Item.new(sprite, type, collect, data)
+	var item =  ItemData.new(sprite, type, collect, data)
 	GameState.collect_item(item)
 	queue_free()

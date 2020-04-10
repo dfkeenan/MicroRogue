@@ -20,7 +20,7 @@ _global_script_classes=[ {
 "path": "res://UI/Icon.gd"
 }, {
 "base": "Reference",
-"class": "Item",
+"class": "ItemData",
 "language": "GDScript",
 "path": "res://Sprites/Items/ItemData.gd"
 }, {
@@ -42,7 +42,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Hud": "",
 "Icon": "",
-"Item": "",
+"ItemData": "",
 "ItemIcon": "",
 "Player": "",
 "StatBar": ""

@@ -1,4 +1,4 @@
-class_name Item
+class_name ItemData
 
 var type : String = "Item"
 var collect : bool = false

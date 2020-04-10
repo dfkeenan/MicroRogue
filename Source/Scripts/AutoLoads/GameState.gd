@@ -13,7 +13,7 @@ var max_armour:int = 2 setget set_max_armour
 
 var items = []
 
-func collect_item(item:Item)-> void:
+func collect_item(item:ItemData)-> void:
 	if item.collect:
 		items.append(item)
 		emit_signal("item_collected", item)
@@ -24,16 +24,23 @@ func collect_item(item:Item)-> void:
 					self.health += item.data[data]
 				"max_health":
 					self.max_health += item.data[data]
-		pass
-		
-		
-		
+				"armour":
+					self.armour += item.data[data]
+				"max_armour":
+					self.max_armour += item.data[data]
+
+
 func has_item(item_type:String)-> bool:
 	for item in items:
 		if item.type == item_type:
 			return true
 			
 	return false
+
+func damage_player(damage: int) -> void:
+	var remainder = max(damage - armour,0)
+	self.armour -= damage
+	self.health -= remainder
 
 func set_health(value:int)->void:
 	health = clamp(max(value,0),0,max_health)

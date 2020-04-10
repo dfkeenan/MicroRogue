@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Sets/Items/Fire.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Sprites/Items/MaxHealth.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/Items/Key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/Items/Health.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/Items/Armour.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sprites/Items/MaxArmour.tscn" type="PackedScene" id=11]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
@@ -44,7 +46,7 @@ position = Vector2( 84, 108 )
 position = Vector2( 60, 36 )
 
 [node name="MaxHealth" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 108, 76 )
+position = Vector2( 44, 68 )
 data = {
 "max_health": 2
 }
@@ -56,6 +58,18 @@ position = Vector2( 108, 92 )
 position = Vector2( 164, 84 )
 data = {
 "health": 1
+}
+
+[node name="MaxArmour" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 44, 84 )
+data = {
+"max_armour": 2
+}
+
+[node name="Armour" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 148, 100 )
+data = {
+"armour": 2
 }
 
 [node name="UI" type="CanvasLayer" parent="."]

@@ -17,7 +17,7 @@ func _ready() -> void:
 	armour_statbar.set_value(GameState.armour, GameState.max_armour)
 	
 
-func _on_item_collected(item:Item)->void:
+func _on_item_collected(item:ItemData)->void:
 	print("item collected")
 	var icon:ItemIcon = ItemIconPrefab.instance()
 	items_container.add_child(icon)

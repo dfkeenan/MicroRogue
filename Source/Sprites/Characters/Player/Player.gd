@@ -16,6 +16,7 @@ onready var animation_tree := $AnimationTree
 func _ready() -> void:
 	self.facing = facing
 
+
 func _unhandled_input(event: InputEvent) -> void:
 	var input_direction : Vector2 = direction
 	
@@ -39,15 +40,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			state_machine.travel("Idle" if input_length == 0 else "Run")
 			
 		direction = input_direction
-	
-	if event.is_action_pressed("player_action"):
-		GameState.health -= 1	
+		
+	if event.is_action_pressed("player_attack"):
+		GameState.damage_player(1)	
 
-func _process(delta: float) -> void:
-	
+
+func _process(delta: float) -> void:	
 	velocity = move_and_slide(direction.normalized() * 32)
 	pass
-	
+
+
 func set_facing(value:Vector2) -> void:
 	facing = value
 	if animation_tree:
