@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Sprites/Characters/Player/Player.gd"
 }, {
+"base": "Resource",
+"class": "SpriteSource",
+"language": "GDScript",
+"path": "res://CustomResources/SpriteSourceResource.gd"
+}, {
 "base": "HBoxContainer",
 "class": "StatBar",
 "language": "GDScript",
@@ -45,6 +50,7 @@ _global_script_class_icons={
 "Item": "",
 "ItemIcon": "",
 "Player": "",
+"SpriteSource": "",
 "StatBar": ""
 }
 

@@ -13,10 +13,21 @@ var max_armour:int = 2 setget set_max_armour
 
 var items = []
 
-func collect_item(item:Item)-> void:	
-	items.append(item)
-	emit_signal("item_collected", item)
-
+func collect_item(item:Item)-> void:
+	if item.collect:
+		items.append(item)
+		emit_signal("item_collected", item)
+	elif item.stats and !item.stats.empty():
+		for stat in item.stats:
+			match stat:
+				"health":
+					self.health += item.stats[stat]
+				"max_health":
+					self.max_health += item.stats[stat]
+		pass
+		
+		
+		
 func has_item(item_type:String)-> bool:
 	for item in items:
 		if item.type == item_type:

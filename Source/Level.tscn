@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Sets/Items/Fire.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Sets/Items/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/Items/Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Items/MaxHealth.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/Items/Health.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
@@ -41,11 +43,14 @@ position = Vector2( 84, 108 )
 [node name="Fire" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 60, 36 )
 
-[node name="Key" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 124, 68 )
-
-[node name="Key2" parent="YSort" instance=ExtResource( 7 )]
+[node name="MaxHealth" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 92 )
+
+[node name="Key" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 124, 76 )
+
+[node name="Health" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 60, 84 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 100

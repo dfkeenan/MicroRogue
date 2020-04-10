@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Items/ItemResource.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Items/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Items/items_sprite_source.tres" type="Resource" id=3]
+[ext_resource path="res://Sprites/sprites.png" type="Texture" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+type = "MaxHealth"
+collect = false
+stats = {
+"max_health": 2
+}
+sprite_source = ExtResource( 3 )
+sprite_frame = 4
+
+[node name="MaxHealth" instance=ExtResource( 2 )]
+item_data = SubResource( 1 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 4 )
+vframes = 3
+hframes = 10
+frame = 4

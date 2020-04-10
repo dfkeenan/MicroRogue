@@ -39,7 +39,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			state_machine.travel("Idle" if input_length == 0 else "Run")
 			
 		direction = input_direction
-		
+	
+	if event.is_action_pressed("player_action"):
+		GameState.health -= 1	
 
 func _process(delta: float) -> void:
 	

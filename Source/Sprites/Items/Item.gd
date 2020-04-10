@@ -25,7 +25,7 @@ func _get_configuration_warning() -> String:
 	if not item_data:
 		warnings.append("%s is missing item_data." % name)
 	elif not item_data is Item:
-		warnings.append("%s is not an Item." % name)	
+		warnings.append("%s is not an Item." % name)
 		
 	return warnings.join("\n")
 
