@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Icon.gd"
 }, {
-"base": "Resource",
+"base": "Reference",
 "class": "Item",
 "language": "GDScript",
-"path": "res://Sprites/Items/ItemResource.gd"
+"path": "res://Sprites/Items/ItemData.gd"
 }, {
 "base": "Icon",
 "class": "ItemIcon",
@@ -33,11 +33,6 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Sprites/Characters/Player/Player.gd"
-}, {
-"base": "Resource",
-"class": "SpriteSource",
-"language": "GDScript",
-"path": "res://CustomResources/SpriteSourceResource.gd"
 }, {
 "base": "HBoxContainer",
 "class": "StatBar",
@@ -50,7 +45,6 @@ _global_script_class_icons={
 "Item": "",
 "ItemIcon": "",
 "Player": "",
-"SpriteSource": "",
 "StatBar": ""
 }
 

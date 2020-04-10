@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Sprites/sprites.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Items/Item.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -10,6 +11,10 @@ collision_layer = 8
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 10
+frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

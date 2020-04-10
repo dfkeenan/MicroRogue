@@ -6,8 +6,8 @@
 [ext_resource path="res://Sprites/Characters/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sets/Items/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/Items/Key.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/Items/MaxHealth.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/Items/MaxHealth.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Items/Key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/Items/Health.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node2D"]
@@ -43,14 +43,20 @@ position = Vector2( 84, 108 )
 [node name="Fire" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 60, 36 )
 
-[node name="MaxHealth" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 124, 92 )
+[node name="MaxHealth" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 108, 76 )
+data = {
+"max_health": 2
+}
 
-[node name="Key" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 124, 76 )
+[node name="Key" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 108, 92 )
 
 [node name="Health" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 60, 84 )
+position = Vector2( 164, 84 )
+data = {
+"health": 1
+}
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 100

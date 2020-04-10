@@ -17,13 +17,13 @@ func collect_item(item:Item)-> void:
 	if item.collect:
 		items.append(item)
 		emit_signal("item_collected", item)
-	elif item.stats and !item.stats.empty():
-		for stat in item.stats:
-			match stat:
+	elif item.data and !item.data.empty():
+		for data in item.data:
+			match data:
 				"health":
-					self.health += item.stats[stat]
+					self.health += item.data[data]
 				"max_health":
-					self.max_health += item.stats[stat]
+					self.max_health += item.data[data]
 		pass
 		
 		
