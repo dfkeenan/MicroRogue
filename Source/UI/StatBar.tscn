@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/ui_sprites.png" type="Texture" id=1]
 [ext_resource path="res://UI/StatBar.gd" type="Script" id=2]
+[ext_resource path="res://UI/Icon.tscn" type="PackedScene" id=3]
 
 [node name="StatBar" type="HBoxContainer"]
 margin_right = 32.0
@@ -10,16 +11,11 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-blocks = 3
 
-[node name="Icon" type="CenterContainer" parent="."]
-margin_right = 32.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
+[node name="Icon" parent="." instance=ExtResource( 3 )]
 
-[node name="Sprite" type="Sprite" parent="Icon"]
-scale = Vector2( 4, 4 )
+[node name="Sprite" parent="Icon/Container" index="0"]
 texture = ExtResource( 1 )
-centered = false
 hframes = 6
-frame = 2
+
+[editable path="Icon"]

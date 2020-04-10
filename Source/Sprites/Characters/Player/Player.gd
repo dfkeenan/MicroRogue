@@ -15,7 +15,6 @@ onready var animation_tree := $AnimationTree
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.facing = facing
-	pass # Replace with function body.
 
 func _unhandled_input(event: InputEvent) -> void:
 	var input_direction : Vector2 = direction
@@ -40,9 +39,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			state_machine.travel("Idle" if input_length == 0 else "Run")
 			
 		direction = input_direction
+		
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
 	velocity = move_and_slide(direction.normalized() * 32)

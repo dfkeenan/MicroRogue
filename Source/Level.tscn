@@ -39,16 +39,13 @@ facing = Vector2( 1, 0 )
 position = Vector2( 84, 108 )
 
 [node name="Fire" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 188, 60 )
+position = Vector2( 60, 36 )
 
 [node name="Key" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 52, 52 )
+position = Vector2( 124, 68 )
 
 [node name="Key2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 60, 84 )
-
-[node name="Key3" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 36, 76 )
+position = Vector2( 124, 92 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 100

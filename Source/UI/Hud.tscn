@@ -36,8 +36,8 @@ __meta__ = {
 margin_top = 36.0
 margin_bottom = 68.0
 
-[node name="Sprite" parent="StatsContainer/VBoxContainer/ArmourStatBar/Icon" index="0"]
-frame = 5
+[node name="Sprite" parent="StatsContainer/VBoxContainer/ArmourStatBar/Icon/Container" index="0"]
+frame = 3
 
 [node name="InventoryConainer" type="MarginContainer" parent="."]
 anchor_left = 1.0
@@ -63,3 +63,5 @@ margin_bottom = 8.0
 [node name="HBoxContainer" type="HBoxContainer" parent="InventoryConainer/VBoxContainer"]
 
 [editable path="StatsContainer/VBoxContainer/ArmourStatBar"]
+
+[editable path="StatsContainer/VBoxContainer/ArmourStatBar/Icon"]
