@@ -1,18 +1,11 @@
 extends Node2D
 
+export(bool) var closed : bool = true
 
-onready var collision_layer = $StaticBody2D.collision_layer
-
-#func _ready() -> void:
-#	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
-
+onready var animation : AnimationPlayer = $ AnimationPlayer
+onready var tile_offset : Vector2 = $Sprite.offset
 
 func _on_Area2D_body_entered(_body: Node) -> void:
-	if GameState.has_item("Key"):
-		$Sprite.visible = false
-		$StaticBody2D.collision_layer = 0
+	if closed and GameState.has_item("Key"):
+		animation.play("Open")
+		closed = false
