@@ -57,7 +57,7 @@ position = Vector2( 108, 92 )
 [node name="Health" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 164, 84 )
 data = {
-"health": 1
+"health": 2
 }
 
 [node name="MaxArmour" parent="YSort" instance=ExtResource( 11 )]
