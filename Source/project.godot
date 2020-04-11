@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Icon.gd"
 }, {
+"base": "Area2D",
+"class": "Interaction",
+"language": "GDScript",
+"path": "res://Sets/Items/Interactions/Interaction.gd"
+}, {
 "base": "Reference",
 "class": "ItemData",
 "language": "GDScript",
@@ -42,6 +47,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Hud": "",
 "Icon": "",
+"Interaction": "",
 "ItemData": "",
 "ItemIcon": "",
 "Player": "",

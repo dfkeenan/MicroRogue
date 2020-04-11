@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sets/Textures/doors.png" type="Texture" id=1]
+[ext_resource path="res://Sets/Items/Interactions/Interaction.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sets/Items/Door.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=4]
@@ -62,15 +63,15 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 4 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 4, 12 )
 
 [node name="Door" type="Node2D"]
+position = Vector2( 0, -4 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-offset = Vector2( 0, -4 )
 hframes = 4
 frame = 3
 region_rect = Rect2( 32, 16, 8, 8 )
@@ -80,17 +81,16 @@ anims/Close = SubResource( 4 )
 anims/Open = SubResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 0, -4 )
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 0, -4 )
-collision_layer = 4
+[node name="Interaction" parent="." instance=ExtResource( 2 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 2 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource( 5 )
+[connection signal="interact" from="Interaction" to="." method="_on_Interaction_interact"]
+
+[editable path="Interaction"]

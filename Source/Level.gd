@@ -44,7 +44,7 @@ func replace_tiles()-> void:
 					
 					if tile_scene:
 						objects.add_child(tile_scene)
-						tile_scene.global_position = tilemap.map_to_world(location) - tile_scene.tile_offset + tilemap.cell_size / 2
+						tile_scene.global_position = tilemap.map_to_world(location) + tilemap.cell_size / 2
 
 
 func get_tile_scene(tile_name:String) -> Node2D:
