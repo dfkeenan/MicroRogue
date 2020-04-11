@@ -18,7 +18,6 @@ func _ready() -> void:
 	
 
 func _on_item_collected(item:ItemData)->void:
-	print("item collected")
 	var icon:ItemIcon = ItemIconPrefab.instance()
 	items_container.add_child(icon)
 	icon.item_data = item
