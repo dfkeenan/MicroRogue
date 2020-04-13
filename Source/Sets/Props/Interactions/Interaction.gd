@@ -28,10 +28,10 @@ func hide() -> void:
 	sprite.visible = false;
 	animation.stop()
 
-func _on_Interaction_body_entered(body: Node) -> void:
+func _on_Interaction_body_entered(_body: Node) -> void:
 	can_interact = true
 	show()
 
-func _on_Interaction_body_shape_exited(body_id: int, body: Node, body_shape: int, area_shape: int) -> void:
+func _on_Interaction_body_shape_exited(_body_id: int, _body: Node, _body_shape: int, _area_shape: int) -> void:
 	can_interact = false
 	hide()

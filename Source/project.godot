@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Action",
+"language": "GDScript",
+"path": "res://Core/Actions/Action.gd"
+}, {
+"base": "Node",
+"class": "ChangeSceneAction",
+"language": "GDScript",
+"path": "res://Core/Actions/ChangeSceneAction.gd"
+}, {
 "base": "Control",
 "class": "Hud",
 "language": "GDScript",
@@ -22,7 +32,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Interaction",
 "language": "GDScript",
-"path": "res://Sets/Items/Interactions/Interaction.gd"
+"path": "res://Sets/Props/Interactions/Interaction.gd"
 }, {
 "base": "Reference",
 "class": "ItemData",
@@ -43,15 +53,29 @@ _global_script_classes=[ {
 "class": "StatBar",
 "language": "GDScript",
 "path": "res://UI/StatBar.gd"
+}, {
+"base": "Resource",
+"class": "Transition",
+"language": "GDScript",
+"path": "res://Core/Transitions/Transition.gd"
+}, {
+"base": "CanvasLayer",
+"class": "TransitionLayer",
+"language": "GDScript",
+"path": "res://Core/Transitions/TransitionLayer.gd"
 } ]
 _global_script_class_icons={
+"Action": "",
+"ChangeSceneAction": "",
 "Hud": "",
 "Icon": "",
 "Interaction": "",
 "ItemData": "",
 "ItemIcon": "",
 "Player": "",
-"StatBar": ""
+"StatBar": "",
+"Transition": "",
+"TransitionLayer": ""
 }
 
 [application]

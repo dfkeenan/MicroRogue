@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Core/Transitions/TransitionLayer.gd" type="Script" id=1]
+[ext_resource path="res://Core/Transitions/Transitions/default.tres" type="Resource" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float cutoff : hint_range(0,1.0);
+uniform vec4 transition_color : hint_color;
+uniform sampler2D transition_map : hint_albedo;
+
+uniform bool invert;
+uniform bool flip_x;
+uniform bool flip_y;
+
+
+void fragment()
+{
+	COLOR = texture(SCREEN_TEXTURE,SCREEN_UV);
+	
+	vec2 transition_uv = vec2(SCREEN_UV.x, 1.0 - SCREEN_UV.y);
+	
+	if (flip_x) 
+	{
+		transition_uv.x = 1.0 - transition_uv.x;
+	}
+	
+	if (flip_y) 
+	{
+		transition_uv.y = 1.0 - transition_uv.y;
+	}
+	
+	vec4 transition = texture(transition_map, transition_uv);
+	
+	float transition_amount = transition.r;
+	
+	if (invert)
+	{
+		transition_amount = 1.0 - transition_amount
+	}
+	
+	if(transition_amount < cutoff) 
+	{
+			COLOR.rgb = transition_color.rgb;
+	}
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/cutoff = 0.0
+shader_param/transition_color = null
+shader_param/invert = null
+shader_param/flip_x = null
+shader_param/flip_y = null
+
+[node name="TransitionLayer" type="CanvasLayer"]
+layer = 128
+script = ExtResource( 1 )
+default_transition = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

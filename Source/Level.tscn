@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sets/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Sets/Items/Fire.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sets/Props/Fire.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Hud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Characters/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sets/Props/StairsDown.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/Items/MaxHealth.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/Items/Key.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Core/Transitions/TransitionLayer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/Items/MaxArmour.tscn" type="PackedScene" id=11]
 
 [node name="Level" type="Node2D"]
@@ -15,7 +17,7 @@ tile_replacements = {
 "wooden-door": "doorway"
 }
 tile_scenes = {
-"wooden-door": "res://Sets/Items/Door.tscn"
+"wooden-door": "res://Sets/Props/Door.tscn"
 }
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -60,8 +62,15 @@ data = {
 "max_armour": 2
 }
 
+[node name="StairsDown" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 132, 140 )
+
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 100
 
 [node name="Hud" parent="UI" instance=ExtResource( 3 )]
 visible = false
+
+[node name="TransitionLayer" parent="." instance=ExtResource( 9 )]
+after_transtion_in = 1
+ready_action = 1

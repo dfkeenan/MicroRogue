@@ -11,6 +11,7 @@ func _ready() -> void:
 	load_ui()
 	set_camera_limits()
 	replace_tiles()
+
 	
 func load_ui() -> void:
 	$UI/Hud.visible = true
