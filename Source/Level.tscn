@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Sets/Props/Fire.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Sprites/Items/MaxHealth.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/Items/Key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Core/Transitions/TransitionLayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Core/Transitions/Transitions/circle_vertical.tres" type="Resource" id=10]
 [ext_resource path="res://Sprites/Items/MaxArmour.tscn" type="PackedScene" id=11]
 
 [node name="Level" type="Node2D"]
@@ -74,3 +75,4 @@ visible = false
 [node name="TransitionLayer" parent="." instance=ExtResource( 9 )]
 after_transtion_in = 1
 ready_action = 1
+default_transition = ExtResource( 10 )
