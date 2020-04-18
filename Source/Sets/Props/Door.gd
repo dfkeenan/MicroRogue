@@ -17,3 +17,4 @@ func _on_UnlockDoorInteraction_interact() -> void:
 	if closed and GameState.has_item("Key"):
 		animation.play("Open")
 		closed = false
+		unlock_door.interactable = false

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Core/Transitions/TransitionLayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Core/Transitions/Transitions/circle_vertical.tres" type="Resource" id=2]
+[ext_resource path="res://Sets/Props/Interactions/Actions/ChangeSceneAction.gd" type="Script" id=3]
+
+[node name="ChangeSceneAction" type="Node"]
+script = ExtResource( 3 )
+
+[node name="TransitionLayer" parent="." instance=ExtResource( 1 )]
+default_transition = ExtResource( 2 )

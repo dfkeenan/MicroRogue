@@ -10,28 +10,37 @@ export(String) var enabled_animation : String = "Enabled"
 onready var sprite : Sprite = $Sprite
 onready var animation : AnimationPlayer = $AnimationPlayer
 
-var can_interact : bool = false
+var interactable : bool = true
+var handle_input : bool = false
 
 func _ready() -> void:
 	hide()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if can_interact and event.is_action_pressed("player_action"):
+	if handle_input and event.is_action_pressed("player_action"):
 		hide()
 		emit_signal("interact")
+		execute_actions()
 
 func show() -> void:
-	sprite.visible = true
-	animation.play( enabled_animation if enabled else disabled_animation)
+	if interactable:
+		sprite.visible = true
+		animation.play( enabled_animation if enabled else disabled_animation)
 	
 func hide() -> void:
 	sprite.visible = false;
 	animation.stop()
+	
+func execute_actions() -> void:
+	for child in get_children():
+		if child is Action:
+			child.execute()
+			yield(child,"action_complete")
 
 func _on_Interaction_body_entered(_body: Node) -> void:
-	can_interact = true
+	handle_input = true
 	show()
 
 func _on_Interaction_body_shape_exited(_body_id: int, _body: Node, _body_shape: int, _area_shape: int) -> void:
-	can_interact = false
+	handle_input = false
 	hide()

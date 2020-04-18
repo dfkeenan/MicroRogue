@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Action",
 "language": "GDScript",
-"path": "res://Core/Actions/Action.gd"
+"path": "res://Sets/Props/Interactions/Actions/Action.gd"
 }, {
-"base": "Node",
+"base": "Action",
 "class": "ChangeSceneAction",
 "language": "GDScript",
-"path": "res://Core/Actions/ChangeSceneAction.gd"
+"path": "res://Sets/Props/Interactions/Actions/ChangeSceneAction.gd"
 }, {
 "base": "Control",
 "class": "Hud",
