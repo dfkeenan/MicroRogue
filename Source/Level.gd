@@ -6,6 +6,8 @@ export(Dictionary) var tile_scenes = {}
 onready var tilemap : TileMap = $TileMap
 onready var tileset : TileSet = $TileMap.tile_set
 onready var objects : YSort = $YSort
+onready var camera : Camera2D = $Camera2D
+
 
 func _ready() -> void:
 	load_ui()
@@ -21,14 +23,12 @@ func set_camera_limits() -> void:
 	var rect : Rect2 = tilemap.get_used_rect()
 	var cell_size : Vector2 = tilemap.cell_size
 	var start : Vector2 = rect.position * cell_size
-	var end : Vector2 = rect.end * cell_size
-	
-	for camera in get_tree().get_nodes_in_group("limit_camera"):
-		if camera is Camera2D and camera.current:
-			camera.limit_left = start.x
-			camera.limit_top = start.y
-			camera.limit_right = end.x
-			camera.limit_bottom = end.y
+	var end : Vector2 = rect.end * cell_size	
+
+	camera.limit_left = start.x
+	camera.limit_top = start.y
+	camera.limit_right = end.x
+	camera.limit_bottom = end.y
 
 
 func replace_tiles()-> void:

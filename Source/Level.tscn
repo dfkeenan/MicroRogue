@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Sets/Props/Fire.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Core/Transitions/TransitionLayer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Core/Transitions/Transitions/circle_vertical.tres" type="Resource" id=10]
 [ext_resource path="res://Sprites/Items/MaxArmour.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Core/Cameras/ManagedCamera2D.gd" type="Script" id=12]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
@@ -76,3 +77,18 @@ visible = false
 after_transtion_in = 1
 ready_action = 1
 default_transition = ExtResource( 10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 52, 36 )
+current = true
+zoom = Vector2( 0.25, 0.25 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
+script = ExtResource( 12 )
+__meta__ = {
+"_editor_description_": ""
+}
